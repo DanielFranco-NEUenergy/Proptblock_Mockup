@@ -702,5 +702,5 @@ abi = [
 	}
 ];
 
-contractAddress = '0x1d638cCb66652Fb66655437C41392BA7C7A283d8';
+contractAddress = '0x0596955b4167C7D62f76FFFD1B39E8f244769958';
 
