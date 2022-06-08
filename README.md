@@ -15,16 +15,55 @@ The node application will be running on express server on port 3000 or given por
 Open browser and type url **127.0.0.1:3000/**
 
 
-## Heroku
+## Heroku pushing
 Create Heroku dapp meta-inmobiliaria-mockup in the Heroku platform.
 
 Install Heroku CLI
 
 Run the following commands
 
+`heroku buildpacks:set heroku/nodejs` ---> To install a Buildpack URL set
+
+`heroku buildpacks` ---> To check the buildpacks installed
+
+Specify the "engines" field in package.json like this:
+{
+    "name": "metamask-connection",
+    "version": "1.0.0",
+    "engines": {
+        "node": "16.x"
+        },
+    "description": "Connecting dapp with metamask using ethers.js library",
+    .
+    .
+    .
+}
+
 `heroku login --interactive`
 
-`git init` ----> Only if the github/bitbcket/azure/aws repo has no remote configured from the local, otherwise ignore this step ( https://gist.github.com/smcunning/4bf71f65bc15a7f3e1c0d79a0049f3ea )
+`git init`
 
-`heroku git:remote -a meta-inmobiliaria-mockup` ---> https://git.heroku.com/meta-inmobiliaria-mockup.git should have been created. Make sure /node_modules line is in the gitignore. Check the new heroku remote repo having been added in GitExtensions.
+`heroku git:remote -a meta-inmobiliaria-mockup` ---> https://git.heroku.com/meta-inmobiliaria-mockup.git remote should have been created locally.
 
+Make sure /node_modules line is in the gitignore.
+
+Make sure that dotenv dependencies is not in devDependencies. Continue with:
+
+`git add .`
+
+`git commit -am "First functional version"`
+
+`git push heroku master` ---> wait for "https://meta-inmobiliaria-mockup.herokuapp.com/ deployed to Heroku" message to appear in the terminal
+
+Follow the url or execute:
+
+`heroku open`
+
+In case of an error:
+
+`heroku logs --tail`
+
+
+
+----------------------------------------
+NOTE:No two remotes can be simultaneously active when working with Heroku.

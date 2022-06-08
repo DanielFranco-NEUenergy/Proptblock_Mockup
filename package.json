@@ -1,17 +1,19 @@
 {
     "name": "metamask-connection",
     "version": "1.0.0",
-    "description": "Connecting dapp with metamask using ethers.js library",
+    "engines": {
+        "node": "16.x"
+    },
+    "description": "A mockup of the proptech by Blockchain eX & Daniel David Franco Gutierrez",
     "main": "index.js",
     "scripts": {
         "dev": "nodemon -r dotenv/config server/server.js dotenv_config_path=config/dev.env",
         "start": "node server/server.js"
     },
     "keywords": [],
-    "author": "Jaca28",
-    "license": "MIT",
+    "author": "Blockchain eX & Daniel David Franco Gutierrez",
+    "license": "Commercial Use forbidden",
     "devDependencies": {
-        "dotenv": "^10.0.0",
         "nodemon": "^2.0.12"
     },
     "dependencies": {
@@ -19,7 +21,7 @@
         "body-parser": "^1.19.0",
         "connect-multiparty": "^2.2.0",
         "crypto": "^1.0.1",
-        "dotenv": "^8.2.0",
+        "dotenv": "^8.6.0",
         "express": "^4.17.1",
         "express-rate-limit": "^5.5.1",
         "gridfs-stream": "^1.1.1",
