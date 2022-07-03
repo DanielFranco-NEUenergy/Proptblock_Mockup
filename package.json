@@ -4,14 +4,14 @@
     "engines": {
         "node": "16.x"
     },
-    "description": "A mockup of the proptech by Blockchain eX & Daniel David Franco Gutierrez",
+    "description": "A mockup of asset tokenization by RealStateVerse (Daniel Franco, Christian Guzman, Carolina Gonzalez, Sara Acevedo)",
     "main": "index.js",
     "scripts": {
         "dev": "nodemon -r dotenv/config server/server.js dotenv_config_path=config/dev.env",
         "start": "node server/server.js"
     },
     "keywords": [],
-    "author": "Blockchain eX & Daniel David Franco Gutierrez",
+    "author": "RealStateVerse (Daniel Franco, Christian Guzman, Carolina Gonzalez, Sara Acevedo)",
     "license": "Commercial Use forbidden",
     "devDependencies": {
         "nodemon": "^2.0.12"
