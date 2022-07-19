@@ -1,11 +1,8 @@
 module.exports = (function(){
     'use strict'
 
-    const mailTheme = require('../Templates/invitationMail');
-    // Validador de Errores 
     const ValidationError = require('../Handler/ValidationError');
     // Servicio de correo
-    var mailService = require('../Service/Mail');
     var userService = require('../Service/User');
 
     // Modelos
