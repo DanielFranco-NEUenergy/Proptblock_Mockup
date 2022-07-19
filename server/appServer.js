@@ -24,8 +24,6 @@ module.exports = function(app) {
 
     var meta = require('./Config/Config')
     require('dotenv').config()
-    var mongoCloud = "mongodb+srv://" + process.env.DON_RIFA_USER_MONGO + ":"+ process.env.DON_RIFA_PWD_MONGO + "@cluster0.vp7pv.mongodb.net/test?retryWrites=true&w=majority"
-    var mongoose = require('mongoose')
     var multer  = require('multer')
     const GridFsStorage = require('multer-gridfs-storage')
     const crypto = require("crypto")
@@ -33,46 +31,7 @@ module.exports = function(app) {
     const Grid = require('gridfs-stream')
 
     // Biblioteca de imagenes
-    const MgPromise = mongoose.connect(mongoCloud, { useNewUrlParser: true, useUnifiedTopology: true })
-    mongoose.connection.on('connected', ()=>{
-        console.log("Conectado a mongo")
-    })
-    // Si la conexion arroja errores
-    mongoose.connection.on('error', (err)=> {
-        console.log('handle mongo errored connections: ' + err)
-    })
-    // Cuendo la conexion es desconectada
-    mongoose.connection.on('disconnected', ()=>{  
-        console.log('Mongoose default connection disconnected')
-    })
     
-    const conn = mongoose.connection
-    let gfs
-    conn.once('open',() => {
-        gfs = Grid(conn, mongoose.mongo)
-        gfs.collection('images')
-    })
-
-    const storage = new GridFsStorage({
-        db: MgPromise,
-        file: (req, file) => {
-            return new Promise((resolve, reject) => {
-                crypto.randomBytes(16, (err, buf) => {
-                    if (err) {
-                        return reject(err)
-                    }
-                    const filename = buf.toString("hex") + path.extname(file.originalname)
-                    const fileInfo = {
-                        filename: filename,
-                        bucketName: "docs"
-                    }
-                    resolve(fileInfo)
-                })
-            })
-        }
-    })
-    const upload = multer({storage}).single('image1')
-    app.use(upload)
 
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", "*")

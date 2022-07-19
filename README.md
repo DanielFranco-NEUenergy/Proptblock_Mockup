@@ -16,7 +16,7 @@ Open browser and type url **127.0.0.1:3000/**
 
 
 ## Heroku pushing
-Create Heroku dapp meta-inmobiliaria-mockup in the Heroku platform.
+Create Heroku dapp realstateverse-descentralized-mockup in the Heroku platform.
 
 Install Heroku CLI
 
@@ -43,7 +43,7 @@ Specify the "engines" field in package.json like this:
 
 `git init`
 
-`heroku git:remote -a meta-inmobiliaria-mockup` ---> https://git.heroku.com/meta-inmobiliaria-mockup.git remote should have been created locally.
+`heroku git:remote -a realstateverse-descentralized-mockup` ---> https://git.heroku.com/meta-inmobiliaria-mockup.git remote should have been created locally.
 
 Make sure /node_modules line is in the gitignore.
 
@@ -53,7 +53,7 @@ Make sure that dotenv dependencies is not in devDependencies. Continue with:
 
 `git commit -am "First functional version"`
 
-`git push heroku master` ---> wait for "https://meta-inmobiliaria-mockup.herokuapp.com/ deployed to Heroku" message to appear in the terminal
+`git push heroku master` ---> wait for "https://realstateverse-descentralized-mockup.herokuapp.com/ deployed to Heroku" message to appear in the terminal
 
 Follow the url or execute:
 
